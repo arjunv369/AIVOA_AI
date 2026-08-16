@@ -4,6 +4,8 @@ import tailwindcss from "@tailwindcss/vite";
 import { fileURLToPath, URL } from "node:url";
 
 export default defineConfig({
+  base: "/AIVOA_AI/",
+
   plugins: [
     react(),
     tailwindcss(),
@@ -24,3 +26,4 @@ export default defineConfig({
     },
   },
 });
+```
