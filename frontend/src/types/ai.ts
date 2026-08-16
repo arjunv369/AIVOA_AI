@@ -1,5 +1,3 @@
-
-
 export type ExtractionStatus =
   | "idle"
   | "uploading"
@@ -77,6 +75,7 @@ export interface AIMessage {
   sender?: "assistant" | "user";
 
   content: string;
+  quickQuestions?: string[];
 
   createdAt?: string;
   timestamp?: string;
