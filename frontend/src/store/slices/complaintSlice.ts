@@ -12,7 +12,7 @@ export type FieldSourceBadge = 'Awaiting AI extraction...' | 'AI Extracted' | 'A
 
 export interface ComplaintState {
   formData: ComplaintPayload;
-  fieldBadges: Record<keyof ComplaintPayload, FieldSourceBadge>;
+  fieldBadges: Partial<Record<keyof ComplaintPayload, FieldSourceBadge>>;
   validationErrors: FormValidationErrors;
   isSaving: boolean;
   saveSuccess: boolean;
@@ -183,3 +183,4 @@ export const {
 } = complaintSlice.actions;
 
 export default complaintSlice.reducer;
+
