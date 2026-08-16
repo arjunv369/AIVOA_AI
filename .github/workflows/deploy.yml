@@ -17,20 +17,21 @@ concurrency:
 
 jobs:
   build:
+    name: Build Frontend
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v6
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
           node-version: 24
           cache: npm
           cache-dependency-path: frontend/package-lock.json
 
-      - name: Install dependencies
+      - name: Install frontend dependencies
         working-directory: frontend
         run: npm ci
 
@@ -41,12 +42,13 @@ jobs:
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v6
 
-      - name: Upload frontend
+      - name: Upload frontend build
         uses: actions/upload-pages-artifact@v4
         with:
           path: frontend/dist
 
   deploy:
+    name: Deploy to GitHub Pages
     needs: build
     runs-on: ubuntu-latest
 
