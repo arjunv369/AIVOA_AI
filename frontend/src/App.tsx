@@ -19,8 +19,11 @@ export const App: React.FC = () => {
       <Route path="/documents" element={<DocumentsPage />} />
       <Route path="/risk-assessment" element={<RiskAssessmentPage />} />
       <Route path="/reports" element={<ReportsPage />} />
-      {/* Default fallback route redirects to /complaints/new */}
-      <Route path="*" element={<Navigate to="/complaints/new" replace />} />
+
+      <Route
+        path="*"
+        element={<Navigate to="/complaints/new" replace />}
+      />
     </Routes>
   );
 };
