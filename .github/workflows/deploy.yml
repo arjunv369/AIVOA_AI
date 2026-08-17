@@ -39,6 +39,10 @@ jobs:
         working-directory: frontend
         run: npm run build
 
+      - name: Create SPA fallback
+        working-directory: frontend
+        run: cp dist/index.html dist/404.html
+
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
 
