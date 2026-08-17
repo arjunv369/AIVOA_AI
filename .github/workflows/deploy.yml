@@ -43,6 +43,17 @@ jobs:
         working-directory: frontend
         run: cp dist/index.html dist/404.html
 
+      - name: Verify GitHub Pages files
+        working-directory: frontend
+        run: |
+          echo "Checking build files..."
+          test -f dist/index.html
+          test -f dist/404.html
+          echo "index.html:"
+          ls -lh dist/index.html
+          echo "404.html:"
+          ls -lh dist/404.html
+
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
 
